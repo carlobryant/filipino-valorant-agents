@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-image: url("https://64.media.tumblr.com/a34c3f9512e57cb4eeb5443b6609e1f1/tumblr_oppdbjbnh01vt7aw9o1_1280.gif");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 3500px auto;  
+            background-color: black;         
+            height: 100%;
+        }
+
+        .text-center{
+            margin: auto auto auto 20px;
+            text-align: center;
+            position: fixed;
+            display: block;
+            padding: 20px;
+            opacity: 0;
+        }
+
+        .agent-disp{
+            position: fixed;
+            display: none;
+            padding: auto;
+            margin: auto;
+            width: 80%;
+        }
+
+        .agent-disp img{
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .exit-disp{
+            background-color: rgba(30, 30, 30, 0.623);
+            border-radius: 10px;
+            padding: 5px 15px;
+            font-size: 2.5vw;
+            position: fixed;
+            color: white;
+            opacity: 0.4;
+            margin: auto;
+            border: none;
+            left: 20px;
+            top: 20px;  
+        }
+
+        .exit-disp:hover{
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        .bg-black{
+            background-color: black;
+            text-align: center;
+            position: fixed;
+            display: block;
+            padding: 100%;
+            margin: auto;
+            width: 100%;
+            opacity: 0;
+        }
+
+        h1{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-shadow: -8px 8px 10px rgba(226, 226, 226, 0.289);
+            color: rgb(226, 226, 226);
+            text-transform: uppercase;
+            font-weight: normal;
+            line-height: 0.85;
+            font-size: 14vw;
+        }
+
+        footer button{
+            background-color: transparent;
+            margin: 20px 20px 0px -380px;
+            padding: 0px 0px 0px 365px;
+            position: relative;
+            cursor: pointer;
+            border: none;
+            height: 200px;
+        }
+
+        footer button:hover{
+            box-shadow: 0px 0px 10px rgba(226, 226, 226, 0.289);
+            background-color: rgba(226, 226, 226, 0.289);
+        }
+
+        .valo-agent{
+            width: 400px;
+        }
+
+        footer{
+            box-shadow: 0px -20px 40px rgb(30, 30, 30, 0.663);
+            background-color: rgba(30, 30, 30, 0.663);
+            flex-direction: row;
+            position: absolute;
+            overflow-x: scroll;
+            display: flex;
+            width: 100%;
+            bottom: 0;
+            opacity: 1;
+        }
+
+    </style>
+    <title>Valorant Agents</title>
+</head>
+<body>
+    <div class="bg-black"></div>
+
+    <div class="agent-disp"><button class="exit-disp">X</button><img src=""></div>
+    <div class="text-center">
+        <img src="https://freelogopng.com/images/all_img/1664302216valorant-logo-png.png" width="30%" class="valo-text">
+        <h1>Agents</h1>
+    </div>
+    
+    
+    <footer>
+        <img src="assets/valo_ald.png" class="valo-agent agent0"><button class="b0"></button>
+        <img src="assets/valo_dan.png" class="valo-agent agent1"><button class="b1"></button>
+        <img src="assets/valo_sds.png" class="valo-agent agent2"><button class="b2"></button>
+        <img src="assets/valo_kat.png" class="valo-agent agent3"><button class="b3"></button>
+        <img src="assets/valo_arj.png" class="valo-agent agent4"><button class="b4"></button>
+        <img src="assets/valo_mne.png" class="valo-agent agent5"><button class="b5"></button>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".text-center").animate({opacity: 1});
+
+            var currentBg = "https://64.media.tumblr.com/a34c3f9512e57cb4eeb5443b6609e1f1/tumblr_oppdbjbnh01vt7aw9o1_1280.gif"; 
+            var currentAgent = "Agents";
+            var currentDisp = "";
+            var prevAgent = "";
+
+            function current(i){
+                switch(i){
+                        case 0: 
+                            currentBg = "https://i.pinimg.com/originals/fe/c0/12/fec012aaf16bdc1b5e9436995d652fda.gif";
+                            currentDisp = "assets/valo_ald.png";
+                            currentAgent = "Alden";
+                        break;
+                        case 1: 
+                            currentBg = "https://i.pinimg.com/originals/d7/e7/81/d7e781b32269a8a82b500c1a9dc97733.gif"; 
+                            currentDisp = "assets/valo_dan.png";
+                            currentAgent = "Hotdog";
+                        break;
+                        case 2: 
+                            currentBg = "https://64.media.tumblr.com/82016ce5a4baea56a2e7d73ce1a8e02f/tumblr_pmev39tHNs1qeyvpto1_500.gifv"; 
+                            currentDisp = "assets/valo_sds.png";
+                            currentAgent = "Georgia";
+                        break;
+                        case 3: 
+                            currentBg = "https://i.makeagif.com/media/12-21-2015/EgD1hy.gif";
+                            currentDisp = "assets/valo_kat.png";
+                            currentAgent = "Kathryn";
+                        break;
+                        case 4: 
+                            currentBg = "https://i.pinimg.com/originals/f9/47/74/f94774094cdb0632c80e94a27d4de239.gif";
+                            currentDisp = "assets/valo_arj.png";
+                            currentAgent = "Arjo";
+                        break;
+                        case 5: 
+                            currentBg = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/a7203125235033.5634310aadfba.gif";
+                            currentDisp = "assets/valo_mne.png"; 
+                            currentAgent = "Yaya Dub";
+                        break;
+                        default: 
+                            currentBg = "https://64.media.tumblr.com/a34c3f9512e57cb4eeb5443b6609e1f1/tumblr_oppdbjbnh01vt7aw9o1_1280.gif"; 
+                            currentAgent = "Agents";
+                    }
+            };
+
+            function showMenu(shown){
+                if(!shown){
+                    $("footer").hover(function(){
+                    $("footer").animate({opacity: 1, speed: 200});
+                    }, function(){
+                        $("footer").animate({opacity: 0});
+                    });
+                } else {
+                    $("footer").unbind();
+                   $("footer").animate({opacity: 1});
+                }
+            }
+
+            function mainMenu(){
+                $("body").css("background-image", 'url("'+currentBg+'")');
+                
+                $("body").ready(function(){
+                    $(".bg-black").animate({opacity: 0});
+                    showMenu(true);
+                    $(".valo-text").show();
+                    $("h1").text(currentAgent);
+
+                    $(".text-center").css("right","auto");
+                    $("h1").css("text-shadow","-8px 8px 10px rgba(226, 226, 226, 0.289)");
+
+                    $(".text-center").fadeIn(1000);
+
+                    for(let j=0;j<6;j++) $(".agent"+j).animate({opacity: 1});
+                });
+            }
+            
+            function exitToMain(){
+                current(6);
+                    
+                    $(".bg-black").animate({opacity: 1});
+                    $(".agent-disp").fadeOut(500);
+
+                    $(".text-center").fadeOut(1000, function (){
+                        mainMenu();
+                        prevAgent = currentAgent;
+                    });
+            }
+
+            for(let i=0;i<6;i++){
+            
+            $(".b"+i).click(function(){ 
+                showMenu(false);
+
+                current(i);
+                $(".bg-black").animate({opacity: 1});
+                $(".agent-disp").fadeOut(500);
+
+                $(".text-center").fadeOut(1000, function(){ 
+
+                    $(".valo-text").hide();
+                    $("h1").text(currentAgent);
+
+                    $("body").css("background-image", 'url("'+currentBg+'")');
+                    $(".text-center").css({"right":"800px","opacity":"0"}).show(); 
+                    $("h1").css("text-shadow" ,"-15px 15px 8px rgb(64, 0, 0)");
+                    $(".text-center").animate({right: '0px', opacity: 1});
+                        
+                    $(".agent-disp img").attr("src", currentDisp);
+                    $(".agent-disp").fadeIn(2000);
+                        
+                    for(let j=0;j<6;j++){
+                        if(j===i) $(".agent"+j).animate({opacity: 1});
+                        else $(".agent"+j).animate({opacity: 0.2});
+                    }
+
+                    $("body").ready(function(){
+                        $(".bg-black").animate({opacity: 0.8}); 
+                    });
+                    prevAgent = currentAgent;
+                });
+            });
+            }
+  
+            $(".exit-disp").click(function(){
+                    
+                    current(6);
+                    
+                    $(".bg-black").animate({opacity: 1});
+                    $(".agent-disp").fadeOut(500);
+
+                    $(".text-center").fadeOut(1000, function (){
+                        mainMenu();
+                        prevAgent = currentAgent;
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
